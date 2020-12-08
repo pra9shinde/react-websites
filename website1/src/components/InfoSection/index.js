@@ -15,26 +15,53 @@ import {
     Img,
 } from './InfoElements';
 
-const InfoSection = () => {
+const InfoSection = ({
+    lightBg,
+    id,
+    imgStart,
+    topLine,
+    lightText,
+    headLine,
+    darkText,
+    description,
+    btnLabel,
+    img,
+    alt,
+    primary,
+    dark,
+    dark2,
+}) => {
     return (
         <>
-            <InfoContainer>
+            <InfoContainer lightBg={lightBg} id={id}>
                 <InfoWrapper>
-                    <InfoRow>
+                    <InfoRow imgStart={imgStart}>
                         <Column1>
                             <TextWrapper>
-                                <TopLine>Topline</TopLine>
-                                <Heading>Heading</Heading>
-                                <Subtitle>Subtitle</Subtitle>
+                                <TopLine>{topLine}</TopLine>
+                                <Heading lightText={lightText}>{headLine}</Heading>
+                                <Subtitle darkText={darkText}>{description}</Subtitle>
                                 <BtnWrap>
-                                    <Button to='home'>Button</Button>
+                                    <Button
+                                        to='home'
+                                        smooth
+                                        duration={500}
+                                        spy
+                                        exact='true'
+                                        offset={-80}
+                                        primary={primary ? 1 : 0}
+                                        dark={dark ? 1 : 0}
+                                        dark2={dark2 ? 1 : 0}
+                                    >
+                                        {btnLabel}
+                                    </Button>
                                 </BtnWrap>
                             </TextWrapper>
                         </Column1>
 
                         <Column2>
                             <ImgWrap>
-                                <Img />
+                                <Img src={img} alt={alt} />
                             </ImgWrap>
                         </Column2>
                     </InfoRow>

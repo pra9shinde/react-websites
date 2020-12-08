@@ -9,10 +9,18 @@ const Sidebar = (props) => {
             </Icon>
             <SidebarWrapper>
                 <SidebarMenu>
-                    <SidebarLink to='about'>About</SidebarLink>
-                    <SidebarLink to='discover'>Discover</SidebarLink>
-                    <SidebarLink to='services'>Services</SidebarLink>
-                    <SidebarLink to='siginup'>Signup</SidebarLink>
+                    <SidebarLink to='about' onClick={props.toggle}>
+                        About
+                    </SidebarLink>
+                    <SidebarLink to='discover' onClick={props.toggle}>
+                        Discover
+                    </SidebarLink>
+                    <SidebarLink to='services' onClick={props.toggle}>
+                        Services
+                    </SidebarLink>
+                    <SidebarLink to='siginup' onClick={props.toggle}>
+                        Signup
+                    </SidebarLink>
                 </SidebarMenu>
                 <SideBtnWrap>
                     <SidebarRoute to='/signin'>Sign In</SidebarRoute>
